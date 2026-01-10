@@ -1,4 +1,4 @@
-Kako uporabljati Cursor🏴‍☠️⛵️🚀🔭👨‍🚀🛸
+## Kako uporabljati Cursor🏴‍☠️⛵️🚀🔭👨‍🚀🛸
 
 
 
