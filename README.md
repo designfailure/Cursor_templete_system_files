@@ -15,8 +15,9 @@ Korak 4: Vključite kriterije uspešnosti (performance criteria)
 Namesto splošnih navodil tipa "maksimiziraj X", raje specificirajte: "Potrebujem X na tej specifični ravni, ker..."
 
 Korak 5: Hierarhična struktura ciljev (pri kompleksnih nalogah)
-Zaključek: Optimalna predloga (template)
-Na podlagi raziskav je to najboljša struktura za strukturiranje zahtev:
+
+
+Optimalna predloga (template) struktura za strukturiranje zahtev:
 
 [Primarni cilj]: Potrebujem [tip izhoda], ki [kaj doseže].
 
