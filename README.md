@@ -32,8 +32,9 @@ Korak 5: Hierarhična struktura ciljev (pri kompleksnih nalogah)
 
 <img width="1880" height="306" alt="image21" src="https://github.com/user-attachments/assets/afb74816-dad6-41c2-84e4-b864d346141a" />
 
-Ogrodja za hitro načrtovanje
-Prilagoditev: Izdelaj mi [za koga] pripomoček, ki pomaga [cilj / problem] tako, da [kaj naredi].
+
+## Izdelaj mi [za koga] pripomoček, ki pomaga [cilj / problem] tako, da [kaj naredi].
+
 
 
 Metoda 5W1H:
