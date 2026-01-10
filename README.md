@@ -2,6 +2,8 @@
 
 
 
+![From documentation to prototype](https://github.com/user-attachments/assets/3022fc52-4a1f-4612-8504-c82462b4ec41)
+
 Korak 1: Definirajte cilj, ne procesa
 Osnovno načelo: Jasno artikulirajte končno stanje (end state), ki ga želite doseči, namesto zaporedja korakov (algoritma), kako priti do tja.
 
