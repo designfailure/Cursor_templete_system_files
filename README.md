@@ -17,7 +17,7 @@ Namesto splošnih navodil tipa "maksimiziraj X", raje specificirajte: "Potrebuje
 Korak 5: Hierarhična struktura ciljev (pri kompleksnih nalogah)
 
 
-Optimalna predloga (template) struktura za strukturiranje zahtev:
+## Optimalna predloga (template) struktura za strukturiranje zahtev:
 
 [Primarni cilj]: Potrebujem [tip izhoda], ki [kaj doseže].
 
