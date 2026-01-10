@@ -1,6 +1,6 @@
 Kako uporabljati Cursor🏴‍☠️⛵️🚀🔭👨‍🚀🛸
 
-Tukaj je prevod v slovenščino, prilagojen terminologiji s področja programiranja, razvojnih procesov (software development) in inženiringa pozivov (prompt engineering).
+
 
 Korak 1: Definirajte cilj, ne procesa
 Osnovno načelo: Jasno artikulirajte končno stanje (end state), ki ga želite doseči, namesto zaporedja korakov (algoritma), kako priti do tja.
