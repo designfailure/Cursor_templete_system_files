@@ -36,6 +36,8 @@ Korak 5: Hierarhična struktura ciljev (pri kompleksnih nalogah)
 ## Izdelaj mi [za koga] pripomoček, ki pomaga [cilj / problem] tako, da [kaj naredi].
 
 
+![building bloks of a good prompt](https://github.com/user-attachments/assets/589382e9-4bc9-4248-92f5-57eaba1af62e)
+
 
 Metoda 5W1H:
 
