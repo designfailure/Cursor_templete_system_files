@@ -17,6 +17,8 @@ Namesto splošnih navodil tipa "maksimiziraj X", raje specificirajte: "Potrebuje
 Korak 5: Hierarhična struktura ciljev (pri kompleksnih nalogah)
 
 <img width="1880" height="306" alt="image21" src="https://github.com/user-attachments/assets/afb74816-dad6-41c2-84e4-b864d346141a" />
+
+
 ## Optimalna predloga (template) struktura za strukturiranje zahtev:
 
 [Primarni cilj]: Potrebujem [tip izhoda], ki [kaj doseže].
