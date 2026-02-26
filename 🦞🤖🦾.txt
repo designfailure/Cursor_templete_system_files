@@ -1,0 +1,132 @@
+
+(“Things I wish someone told me before I almost gave up on OpenClaw”), oblikovana tako, da jo lahko neposredno uporabiš kot priročnik, best‑practice smernice ali usmeritve za onboardanje ekipe v OpenClaw agentic ekosistem.
+
+
+🦾 OpenClaw🦞 – Lekcije, ki jih želiš poznati prej: 
+
+##Spodaj je 7 ključnih točk z razširjenimi pojasnili, praktičnimi posledicami in priporočili za resnično delo z OpenClaw (lokalni agentni runtime, ki se integrira v messaging kanale in poganja tvoje osebne ali enterprise agente).
+
+
+1. Ne poganjaj vsega skozi najboljši model (Opus, Sonnet, itd.)
+Ekstrakcija
+Najpogostejša začetniška napaka: uporabniki dajo vsa opravila najdražjim modelom. Heartbeati, cron jobi, rutinske naloge – ne potrebujejo premium modela.
+Elaboracija
+OpenClaw omogoča večmodelno orkestracijo. Optimalni pristop:
+
+Glavni workflow → srednji model (Haiku, Gemini Flash, Claude Haiku, Llama 3.1 8B ipd.).
+Fallback → močnejši model samo kadar manjši model ne zna ali naredi napako.
+Model routing s model: <name> v OpenClaw session konfiguraciji zmanjša stroške tudi do 90%.
+Povečanje token limiitov: manjši modeli omogočajo večje kontekste po nižjem strošku (hitrejše batchiranje in manj “stoppage”).
+Praktična implikacija:
+Cena + hitrost = ključ. Najdražji modeli so za razmišljanje, ne za vzdrževanje.
+
+
+2. Tvoj agent potrebuje pravila. Veliko pravil.
+Ekstrakcija
+Privzeti OpenClaw agent je “neumen” – ponavlja, pozablja, dela nekonsekventno, ne ve namena tvojega workflowa.
+Elaboracija
+OpenClaw deluje kot runtime + orchestrator. Ne ve ničesar, dokler mu ti ne definiraš:
+
+SKILL datotek (workspace/skills/*.json)opiši namene, orodja, omejitve, API-je, funkcije.
+RULES / meta‑navodilakako preverjati svoje delo
+kako ravnati v dvomih
+kakšen je proces
+kdaj ponovno vprašati človeka
+kontekstualno povzemanje
+Anti‑loop zaščitaagent mora preveriti stanje pred ponovnim klicem
+Compaction disciplineshrani samo uporabne informacije, ne celotni transcript
+Praktična implikacija:
+OpenClaw ni klasičen chatbot. Je “motor”, ki ga moraš ti naučiti voziti.
+
+
+3. “Ono‑night doesn’t work the way you think” → Session ≠ Memory
+Ekstrakcija
+Če agentu rečeš “nadaljuj”… se bo sesul. OpenClaw nima trajnega spomina v klasičnem smislu.
+Elaboracija
+OpenClaw ima 2 tipa seans:
+
+Foreground sessionpovezana s trenutnim UI/čatom
+vse izgine, ko se sesija konča
+Background scheduled sessions (cron)izolirane, trajnejše, z lastno state datoteko
+idealne za poročila, scraping, maintenance, periodic tasks
+Praktična implikacija:
+Če pričakuješ persistent memory – jo moraš zgraditi sam (datoteke, vector storage, compacted summaries).
+
+
+4. Začni z ENIM delujočim end‑to‑end tokom
+Ekstrakcija
+Ne poskušaj integrirati hkrati: e‑mail + koledar + Telegram + scraping + cron.
+Elaboracija
+Najhitrejši način, da izgubiš živce pri OpenClaw:
+
+Preveč integracij naenkrat
+Preveč hkratnih kanalov
+Preveč skillov brez testiranja
+Pravilni pristop:
+
+Izberi 1 feature.
+Naredi en mini “vertical slice”: input → razum → orodje → output.
+Šele potem dodajaj drugo komponento.
+Praktična implikacija:
+Majhni koraki → manj debugginga → več uspeha → bolj stabilni agentni pipelines.
+
+
+5. Sweat the work – kompaktno povzemanje je nujno
+Ekstrakcija
+Agent sčasoma izgublja kontekst, če se ne izvaja kompakcija.
+Elaboracija
+OpenClaw hrani:
+
+user.md
+agent.md
+memory.json
+cron state
+skill state
+Če ne izvajaš:
+
+compaction summaries
+občasnega resetiranja
+čiščenja starih datotek
+… agent postane “pozabljiv”, “konfuzni” ali začne vračati nerelevantne rezultate.
+Praktična implikacija:
+Vsak resen OpenClaw workflow mora imeti 1× kompakcijo na X ur ali po X interakcijah.
+
+
+6. Model (LLM) ni vse. Še posebej OpenClaw tega ne rešuje namesto tebe.
+Ekstrakcija
+Modeli niso zamenjava za dobro definiran proces.
+Elaboracija
+Opus/Sonnet sta super – ampak:
+
+Če je tvoja arhitektura zanič…
+→ bo output zanič, ne glede na model.
+
+Če agent nima ogranicitev…
+→ bo ustvarjal halucinirane workflowe.
+
+Če ne definiraš jasnih korakov…
+→ bo delal preveč ali premalo.
+
+OpenClaw je orchestrator, ne super‑možgani.
+Glavni faktor uspeha: workflow discipline, ne model.
+
+
+7. Nisi ti “problem”. Trenutno je OpenClaw samo zahteven.
+Ekstrakcija
+OpenClaw ima krivuljo učenja. Veliko ljudi skoraj odneha.
+Elaboracija
+Platforma je:
+
+zelo zmogljiva
+zelo fleksibilna
+zelo hitro razvijajoča (breaking changes vsak teden)
+z minimalno abstrakcijo
+Ampak… ko jo “zgradiš pravilno”, je:
+
+najmočnejši način za gradnjo lokalnih agentov
+idealen za insurance use-case (tvoji projekti: Direkt, claims, pet insurance, JTBD pipelines)
+popolnoma transparenten agent stack, brez black box cloud izvrševanja
+Praktična implikacija:
+Ko enkrat razumeš skill engineering + memory discipline + routing, OpenClaw postane nedosegljiv drugim osebno‑agentnim platformam.
+
+
